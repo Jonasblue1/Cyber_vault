@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-jose
+pydantic
+PyJWT
+web3
+scikit-learn
+joblib
+cryptography
+boto3
+pqcrypto
+
