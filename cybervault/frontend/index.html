@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; connect-src 'self' http://localhost:8080 https://localhost:8080;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberVault</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CyberVault Micro-Finance Platform</h1>
+    <div id="app">
+        <div id="auth-section">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="reg-username" placeholder="Username" required maxlength="32" />
+                <input type="password" id="reg-pin" placeholder="PIN" required maxlength="8" pattern="\\d{4,8}" />
+                <div id="pin-guidance" style="font-size:0.9em;color:#555;margin-bottom:0.5em;">
+                  PIN must be 6-8 digits, not sequential (e.g., 123456), not repeated (e.g., 111111), and not your birth year.
+                </div>
+                <div id="pin-strength" style="font-size:0.9em;"></div>
+                <button type="submit">Register</button>
+            </form>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Username" required maxlength="32" />
+                <input type="password" id="login-pin" placeholder="PIN" required maxlength="8" pattern="\\d{4,8}" />
+                <button type="submit">Login</button>
+            </form>
+            <div id="auth-message"></div>
+        </div>
+        <div id="main-section" style="display:none;">
+            <h2>Request Loan / Make Payment</h2>
+            <form id="tx-form">
+                <input type="number" id="tx-amount" placeholder="Amount" required min="1" />
+                <input type="text" id="tx-type" placeholder="Type (loan/payment)" required maxlength="16" />
+                <button type="submit">Submit</button>
+            </form>
+            <div id="fraud-alert" style="color:red;"></div>
+            <h2>Transactions</h2>
+            <ul id="tx-list"></ul>
+            <h2>Blockchain</h2>
+            <ul id="blockchain-list"></ul>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="service-worker-register.js"></script>
+</body>
+</html>

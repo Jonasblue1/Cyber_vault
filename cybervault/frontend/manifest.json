@@ -1,0 +1,9 @@
+{
+  "name": "CyberVault",
+  "short_name": "CyberVault",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#222222",
+  "icons": []
+}
